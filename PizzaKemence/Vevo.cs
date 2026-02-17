@@ -10,11 +10,12 @@ namespace PizzaKemence
 	{
 		private List<Pizza> elozmeny = new List<Pizza>();
 		private Kiszallitas kiszallitas;
+		private Rendeles rendeles;
 
-
-		public Vevo( Kiszallitas kiszallitas)
+		public Vevo( Kiszallitas kiszallitas, Rendeles rendeles)
 		{
 			this.kiszallitas = kiszallitas;
+			this.rendeles = rendeles;
 		}
 
 		public void AtveszPizza()
@@ -25,6 +26,16 @@ namespace PizzaKemence
 				elozmeny.Add(pizza);
 				Console.WriteLine($"Vevő átvette: {pizza}");
 				Console.WriteLine($"A vevő eddigi rendeléseinek száma: {elozmeny.Count()}");
+			}
+		}
+
+		public void RendelPizza()
+		{
+			while (true)
+			{
+				rendeles.RendelPizza(true);
+				Console.WriteLine($"Vevő rendelt pizzát");
+				Thread.Sleep(5000);
 			}
 		}
 	}

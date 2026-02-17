@@ -11,16 +11,21 @@ namespace PizzaKemence
 		private PizzaKemence pizzaKemence;
 		private static Random r = new Random();
 		private static string[] pizzak = { "Pepperoni", "Margherita", "Hawaii", "Prosciutto", "Frutti di mare"}; 
-		
-		public Sef(PizzaKemence kemence)
+		private Rendeles rendeles;
+		public Sef(PizzaKemence kemence, Rendeles rendeles)
 		{
 			this.pizzaKemence = kemence;
+			this.rendeles = rendeles;
 		}
 
 		public void KiveszPizza()
 		{
 			while (true)
 			{
+				if (rendeles.FelveszPizza())
+				{
+					Console.WriteLine("Séf felvette a rendelést");
+				} 
 				Thread.Sleep(r.Next(2, 4) * 1000);
 				string pizzaNev = pizzak[r.Next(pizzak.Length)];
 				int meret = r.Next(20, 41);
