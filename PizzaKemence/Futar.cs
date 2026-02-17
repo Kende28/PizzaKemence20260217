@@ -8,5 +8,6 @@ namespace PizzaKemence
 {
 	internal class Futar
 	{
+		private PizzaKemence pizzaKemence;
 	}
 }
