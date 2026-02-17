@@ -17,7 +17,7 @@ namespace PizzaKemence
 			this.pizzaKemence = kemence;
 		}
 
-		public void FeladPizza()
+		public void KiveszPizza()
 		{
 			while (true)
 			{
